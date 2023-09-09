@@ -41,14 +41,14 @@ class _MyHomePageState extends State<MyHomePage> {
   interpreter.run(input, output);
 
   // Find the index of the predicted class with the highest score
-  final int predictedClass = output[0].toList().indexOf(output[0].reduce((a, b) => a > b ? a : b));
+  //final int predictedClass = output[0].toList().indexOf(output[0].reduce((a, b) => a > b ? a : b));
 
   // Assuming cropLabels is a list of your crop labels
-  final List<String> cropLabels = ["Crop1", "Crop2", "Crop3", "..."]; // Replace with your actual labels
+  //final List<String> cropLabels = ["Crop1", "Crop2", "Crop3", "..."]; // Replace with your actual labels
 
   // Update the state with the predicted crop label
   this.setState(() {
-    pred_value = predictedClass.toString();
+    pred_value = output[0].toString();
   });
 }
 
