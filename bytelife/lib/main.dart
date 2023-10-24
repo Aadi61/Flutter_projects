@@ -1,8 +1,13 @@
 import 'package:bytelife/widgets/login_widget.dart';
+import 'package:bytelife/widgets/signup_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
+  
   //GoogleFonts.config.allowRuntimeFetching=false;
 }
 
@@ -19,50 +24,50 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SignupWidget(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
+// class MyHomePage extends StatelessWidget {
+//   const MyHomePage({super.key, required this.title});
 
 
 
-  final String title;
+//   final String title;
 
-  @override
-  Widget build(BuildContext context) {
+//   @override
+//   Widget build(BuildContext context) {
     
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      // appBar: AppBar(
+//     return Scaffold(
+//       resizeToAvoidBottomInset: false,
+//       // appBar: AppBar(
         
-      //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      //   title: Text(widget.title),
-      // ),
-      body: SafeArea(
-        child: Center(
-          child: Column(
+//       //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+//       //   title: Text(widget.title),
+//       // ),
+//       body: SafeArea(
+//         child: Center(
+//           child: Column(
 
             
-            //mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+//             //mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
 
-              //const SizedBox(height: 10,),
-              Text(
-                'Good Evening',
+//               //const SizedBox(height: 10,),
+//               Text(
+//                 'Good Evening',
                 
-                style: GoogleFonts.poppins(fontSize: 36, fontWeight: FontWeight.w700),
-              ),
+//                 style: GoogleFonts.poppins(fontSize: 36, fontWeight: FontWeight.w700),
+//               ),
 
-              const SizedBox(height: 30,),
-              LoginWidget()
-            ],
-          ),
-        ),
-      ),
-       // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
+//               const SizedBox(height: 30,),
+//               SignupWidget(),
+//             ],
+//           ),
+//         ),
+//       ),
+//        // This trailing comma makes auto-formatting nicer for build methods.
+//     );
+//   }
+// }

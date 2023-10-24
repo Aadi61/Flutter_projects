@@ -3,13 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CredentialsWidget extends StatelessWidget {
   
+  final TextEditingController controller;
   final String credential_type;
   final bool obscureText;
   const CredentialsWidget(
      {
      super.key,
      required this.credential_type,
-     required this.obscureText
+     required this.obscureText, required this.controller
      }
   );
 
@@ -26,6 +27,7 @@ class CredentialsWidget extends StatelessWidget {
               child: Text(credential_type, style: GoogleFonts.poppins(fontWeight: FontWeight.w800,fontSize: 12)),
             )),
           TextField(
+            controller: controller,
             obscureText: obscureText,
              decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
