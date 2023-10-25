@@ -77,7 +77,16 @@ class _LoginWidgetState extends State<LoginWidget> {
 
                   controller.loginMethod(context: context).then((value) {
                     if(value!=null){
-                      SnackBar(content: Text("Logged in successfully"));
+                      final snackBar = SnackBar(
+            content: const Text('Yay! A SnackBar!'),
+            action: SnackBarAction(
+              label: 'Undo',
+              onPressed: () {
+                // Some code to undo the change.
+              },
+            ),
+          );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     }
                   });
                 },

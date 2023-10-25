@@ -1,11 +1,14 @@
 import 'package:bytelife/widgets/login_widget.dart';
 import 'package:bytelife/widgets/signup_widget.dart';
 import 'package:flutter/material.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    // options: DefaultFi,
+  );
   runApp(const MyApp());
   
   //GoogleFonts.config.allowRuntimeFetching=false;
